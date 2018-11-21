@@ -3,7 +3,7 @@
 steps:
 - name: 'gcr.io/${PROJECT_ID}/terraform'
   args: ['init',
-    '-backend-config=project=${PROJECT_ID}',
+    '-backend-config=project-name=${PROJECT_ID}',
     '-backend-config=bucket=${_BUCKET}']
   env:
     - "TF_VAR_project-name=${PROJECT_ID}"
@@ -21,3 +21,4 @@ steps:
 #    - "TF_VAR_project-name=${PROJECT_ID}"
 substitutions:
     _BUCKET: ${PROJECT_ID}-terraform-state
+    _REGION: us-east-1d
