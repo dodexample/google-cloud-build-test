@@ -1,3 +1,11 @@
+
+terraform {
+  backend "gcs" {
+    bucket = "${var.bucket}"
+    prefix = "terraform/state"
+  }
+}
+
 provider "google" {
   project     = "${var.project-name}"
   region      = "${var.region}"
