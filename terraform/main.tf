@@ -1,6 +1,7 @@
 
 terraform {
   backend "gcs" {
+    bucket = "dod-terraform-testing-terraform-state"
     prefix = "terraform/state"
   }
 }
