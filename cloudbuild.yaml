@@ -4,7 +4,8 @@ steps:
 - name: 'gcr.io/${PROJECT_ID}/terraform'
   args: 
     - 'init'
-    - '-backend-config="project-name=${PROJECT_ID}"'
+    - '-backend-config="bucket=${PROJECT_ID}-terraform-state"'
+    - '-backend-config="prefix=terraform-state"'
   env:
     - "TF_VAR_project-name=${PROJECT_ID}"
   dir: terraform
